@@ -18,12 +18,29 @@ class TestRoom(unittest.TestCase):
         actual = self.room.song_list
         self.assertEqual(expected, actual)
 
+    
     def test_add_song_to_song_list(self):
-        expected = 1
-        actual = self.room.song_list
         self.room.add_song_to_song_list(self.song_1)
+        expected = 1
+        actual = self.room.length_of_song_list()
+        self.assertEqual(expected, actual)
 
-    # def test_length_of_song_list (self):
-    #     expected = 0
-    #     actual = self.room.length_of_song_list
-    #     self.assertEqual(expected, actual)
+    def test_length_of_song_list (self):
+        self.room.add_song_to_song_list(self.song_1)
+        expected = 1
+        actual = self.room.length_of_song_list()
+        self.assertEqual(expected, actual)
+
+
+    def test_room_has_guest_list(self):
+        expected = []
+        actual = self.room.guest_list
+        self.assertEqual(expected,actual)
+   
+
+    # def test_add_guest_to_guest_list(self): 
+    #     expected = 1
+    #     actual = self.room.guest_list
+
+    
+
