@@ -7,6 +7,8 @@ class TestRoom(unittest.TestCase):
     def setUp(self):
         self.room = Room("Rock Room")
         self.song_1 = Song ("Back in Black", "ACDC", "Rock") 
+        self.guest_1 = Guest ("Rockin Ralph", 100, "Back in Black")
+
 
     def test_room_has_name(self):
         expected = "Rock Room"
@@ -38,9 +40,30 @@ class TestRoom(unittest.TestCase):
         self.assertEqual(expected,actual)
    
 
-    # def test_add_guest_to_guest_list(self): 
-    #     expected = 1
-    #     actual = self.room.guest_list
+    def test_add_guest_to_guest_list(self):
+        self.room.add_guest_to_guest_list(self.guest_1)
+        expected = 1 
+        actual = self.room.length_of_guest_list()
+        self.assertEqual(expected, actual)
+
+    def test_length_of_guest_list(self):
+        self.room.add_guest_to_guest_list(self.guest_1)
+        expected = 1
+        actual = self.room.length_of_guest_list()
+        self.assertEqual(expected, actual)
+
+    def test_remove_guest_from_guest_list(self): 
+        self.room.add_guest_to_guest_list(self.guest_1)
+        self.room.remove_guest_from_guest_list(self.guest_1)
+        expected = 0
+        actual = self.room.length_of_guest_list()
+        self.assertEqual(expected,actual)
+    
+    
+
+    
+
+
 
     
 
