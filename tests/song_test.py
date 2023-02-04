@@ -5,17 +5,17 @@ class TestSong(unittest.TestCase):
     def setUp(self):
         self.song = Song("Back in Black", "ACDC", "Rock" )
 
-    def test_has_title(self):
+    def test_song_has_title(self):
         expected = "Back in Black"
         actual = self.song.title
         self.assertEqual (expected, actual)
 
-    def test_has_artist(self):
+    def test_song_has_artist(self):
         expected = "ACDC"
         actual = self.song.artist
         self.assertEqual (expected,actual)
 
-    def test_has_genre(self):
+    def test_song_has_genre(self):
         expected = "Rock"
         actual = self.song.genre
         self.assertEqual (expected, actual)
