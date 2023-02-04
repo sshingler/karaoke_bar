@@ -27,6 +27,14 @@ class TestRoom(unittest.TestCase):
         actual = self.room.length_of_song_list()
         self.assertEqual(expected, actual)
 
+    def test_remove_song_from_song_list(self):
+        self.room.add_song_to_song_list(self.song_1)
+        self.room.remove_song_from_song_list(self.song_1)
+        expected = 0
+        actual = self.room.length_of_song_list()
+        self.assertEqual(expected, actual)
+
+
     def test_length_of_song_list (self):
         self.room.add_song_to_song_list(self.song_1)
         expected = 1
@@ -59,7 +67,7 @@ class TestRoom(unittest.TestCase):
         actual = self.room.length_of_guest_list()
         self.assertEqual(expected,actual)
     
-    
+
 
     
 
