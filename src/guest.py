@@ -4,3 +4,5 @@ class Guest:
         self.wallet = wallet
         self.fave_song = fave_song
 
+    # def guest_pay_entry_fee (self):
+
